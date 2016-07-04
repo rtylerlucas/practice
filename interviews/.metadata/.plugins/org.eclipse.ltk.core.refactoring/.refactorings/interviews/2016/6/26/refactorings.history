@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;algs.sorting&apos; to &apos;algs.sort&apos;&#x0A;- Original project: &apos;interviews&apos;&#x0A;- Original element: &apos;interviews/src/algs.sorting&apos;&#x0A;- Renamed element: &apos;interviews/src/algs.sort&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;algs.sorting&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;algs.sorting" name="algs.sort" qualified="false" references="true" stamp="1466433392399" textual="false" version="1.0"/>
-</session>
