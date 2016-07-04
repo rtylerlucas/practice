@@ -1,0 +1,32 @@
+package algs.list;
+
+import util.SingleLinkNode;
+
+public class ReverseLinkedList {
+    
+    private ReverseLinkedList() {}
+    
+    public static SingleLinkNode reverse(SingleLinkNode node) {
+        
+        if(node == null){
+            return null;
+        }
+        
+        if(node.next == null){
+            return node;
+        }
+        // 1 , 2
+        SingleLinkNode prev = null;
+        SingleLinkNode curr = node;
+        SingleLinkNode next = node.next;
+        
+        while(curr!=null) {
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            next = curr.next;
+        }
+        return curr;
+    }
+
+}

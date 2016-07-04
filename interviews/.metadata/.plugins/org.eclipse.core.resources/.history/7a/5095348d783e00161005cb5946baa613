@@ -1,0 +1,50 @@
+package algs.list;
+
+import util.SingleLinkNode;
+
+public class ReverseLinkedList {
+    
+    private ReverseLinkedList() {}
+    
+    public static SingleLinkNode reverse(SingleLinkNode node) {
+        
+        if(node == null){
+            return null;
+        }
+        
+        if(node.next == null){
+            return node;
+        }
+        // 1 , 2
+        SingleLinkNode prev = null;
+        SingleLinkNode curr = node;
+        SingleLinkNode next = node.next;
+        
+        while(curr != null) {
+            if(prev!=null)
+                System.out.print("Prev: " + prev.data);
+            else {
+                System.out.print("Prev: null");
+            }
+            if(curr!=null)
+                System.out.print(", Curr: " + curr.data);
+            else
+                System.out.print(", Curr: null");
+            if(next!=null)
+                System.out.print(", Next: " + next.data);
+            
+            System.out.println("\n");
+            
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+
+            next = curr.next;
+            
+        }
+        
+        return curr;
+    }
+
+}

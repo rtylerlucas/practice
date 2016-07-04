@@ -1,0 +1,69 @@
+package interviews;
+
+public class DeleteMiddle {
+
+    private static class LinkedListNode {
+
+        private String data;
+        private LinkedListNode next;
+
+        public LinkedListNode(String data, LinkedListNode next) {
+            this.data = data;
+            this.next = next;
+        }   
+    }
+    
+
+    public static void main(String[] args) {
+        String[] testSet = new String[]{"T", "I", "G", "E", "R"};
+        //Make linked list
+        LinkedListNode r = new LinkedListNode(testSet[4], null);
+        LinkedListNode e = new LinkedListNode(testSet[3], r);
+        LinkedListNode g = new LinkedListNode(testSet[2], e);
+        LinkedListNode i = new LinkedListNode(testSet[1], g);
+        LinkedListNode t = new LinkedListNode(testSet[0], i);
+        
+        printList(t);
+        System.out.println("Deleting 'G': " + deleteMiddle(g));
+        printList(t);
+        //Testing nextNext edge case
+        System.out.println("Deleting 'E': " + deleteMiddle(e));
+        printList(t);
+    }
+
+    //TODO - implement deleteMiddle()
+    //given a node that is guaranteed to be the middle node,
+    //delete the node from the singly linked list
+    public static boolean deleteMiddle(LinkedListNode node){
+        //override node with next value, point current node to next next value
+        if(node==null || node.next==null)
+            return false;
+            
+        LinkedListNode nextNode = node.next;
+        node.data = nextNode.data;
+        System.out.println(node.data);
+        //if we have a next next
+        if(nextNode.next!=null){
+            LinkedListNode nextNextNode = nextNode.next;
+            node.next = nextNextNode;
+            System.out.println("next next is not null!");
+        }
+        //otherwise, we're at the end
+        else{
+            node.next = null;
+            System.out.println(String.format("were at the end: %s", node.data));
+        }
+        System.out.println("next:"+nextNode.data);
+        
+        return true;
+    }
+
+    static void printList(LinkedListNode cur) {
+        System.out.print("List: ");
+        while (cur != null) {
+            System.out.print(cur.data + " -> ");
+            cur = cur.next;
+        }
+        System.out.print("\n");
+    }
+}
