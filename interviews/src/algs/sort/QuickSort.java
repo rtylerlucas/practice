@@ -27,7 +27,6 @@ public class QuickSort {
         /*
          * BaseCase: arr length <=1
          */
-        System.out.println(Arrays.toString(arr));
         if(start >= end-1) {
             return arr;
         }

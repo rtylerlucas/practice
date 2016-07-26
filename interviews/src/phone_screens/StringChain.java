@@ -1,3 +1,11 @@
+package phone_screens;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+
 //String Chain
 /*
  * Complete the function below.
@@ -14,7 +22,7 @@
  * 
  * We will have a tracker to maintain our longestChain, and return that once we've hit the end.
  */
-
+public class StringChain{
     static int longestChain(String[] words) {
         
         Arrays.sort(words, new strLengthComparator());
@@ -71,3 +79,4 @@
             return Integer.compare(o1.length(), o2.length());
         }
     }
+}

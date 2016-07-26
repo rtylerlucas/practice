@@ -1,0 +1,28 @@
+package chapter.seven;
+
+/*
+ * Interconvert strings to integers
+ * 
+ * Write a method that accepts a string, and returns 
+ * the integer encoded within the string.
+ * "123" -> 123
+ */
+public class SevenDotOne {
+
+	private SevenDotOne(){}
+	
+	public int strToInt(String str){
+		int res = 0;
+		for(int i = 0; i < str.length(); i ++){
+			res += Math.pow(10, i) * (int)str.charAt(i); 
+		}
+	}
+	
+	public static void main(String[] args){
+		for(int i = 0; i < 10; i++){
+			System.out.println(Math.pow(10, i));
+		}	
+	}
+	
+	
+}

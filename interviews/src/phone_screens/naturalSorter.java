@@ -1,5 +1,7 @@
-import java.io.*;
-import java.util.*;
+package phone_screens;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * To execute Java, please define "static void main" on a class
@@ -132,5 +134,4 @@ public static List<String> sanitize(String str) {
 //Take the string given, iterate across each character,
 //extract numbers, add to result. Cast result as int,
 //compare to other sanitized/casted result.
-
 // comparator int (first, second)

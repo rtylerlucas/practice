@@ -1,3 +1,9 @@
+package phone_screens;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
 /*
  * Complete the function below.
  *
@@ -23,45 +29,47 @@
  *
  * We will have a map of friendexes pointing to the set they belong to for fast lookup. 
  */
+public class FriendCircles {
+	public static int friendCircles(String[] friends) {
+		HashMap<Integer, HashSet<Integer>> setMap = new HashMap<>();
 
-    static int friendCircles(String[] friends) {
-        HashMap<Integer, HashSet<Integer>> setMap = new HashMap<>();
-        
-        loadSetup(friends, setMap);
-        
-        //iterate, if we find a relationship, merge sets and update map.
-        for(int r = 0; r < friends.length; r++) {
-            for(int c = 0; c < friends[r].length(); c++) {
-                if( friends[r].charAt(c)=='Y' && r != c) {
-                    mergeSets(r,c, setMap); // merge the two sets containing friend r and friend c
-                }
-            }
-        }
-        HashSet<HashSet<Integer>> res = new HashSet<>();
-        for(HashSet<Integer> set: setMap.values()){
-            res.add(set);
-        }
-        
-        return res.size();
-        
-        
+		loadSetup(friends, setMap);
 
-    }
+		//iterate, if we find a relationship, merge sets and update map.
+		for(int r = 0; r < friends.length; r++) {
+			for(int c = 0; c < friends[r].length(); c++) {
+				if( friends[r].charAt(c)=='Y' && r != c) {
+					mergeSets(r,c, setMap); // merge the two sets containing friend r and friend c
+				}
+			}
+		}
+		HashSet<HashSet<Integer>> res = new HashSet<>();
+		for(HashSet<Integer> set: setMap.values()){
+			res.add(set);
+		}
 
-    private static void mergeSets(int i, int j, Map<Integer, HashSet<Integer>> setMap) {
-        //look up the sets in the hashTable by the index. addAll
-        HashSet<Integer> friendCircleOne = setMap.get(i);
-        friendCircleOne.addAll(setMap.get(j));
-        setMap.put(j, friendCircleOne);
-        
-    }
+		return res.size();
 
-    private static void loadSetup(String[] friends, Map map) {
-        HashSet<Integer> loneCircle;
-        for(int i=0; i<friends.length; i++) {
-            loneCircle = new HashSet<>();
-            loneCircle.add(i);
-            map.put(i, loneCircle);
-        }
-    }
+
+
+	}
+
+	private static void mergeSets(int i, int j, Map<Integer, HashSet<Integer>> setMap) {
+		//look up the sets in the hashTable by the index. addAll
+		HashSet<Integer> friendCircleOne = setMap.get(i);
+		friendCircleOne.addAll(setMap.get(j));
+		setMap.put(j, friendCircleOne);
+
+	}
+
+	private static void loadSetup(String[] friends, Map map) {
+		HashSet<Integer> loneCircle;
+		for(int i=0; i<friends.length; i++) {
+			loneCircle = new HashSet<>();
+			loneCircle.add(i);
+			map.put(i, loneCircle);
+		}
+	}
+}
+
 
