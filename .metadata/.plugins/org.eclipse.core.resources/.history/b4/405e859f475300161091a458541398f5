@@ -1,0 +1,39 @@
+package chapter.eight;
+
+/*
+ * Merge Two singly linked sorted lists
+ */
+public class EightDotOne {
+
+	private EightDotOne(){}
+	
+	/*
+	 * Given two head nodes, merge the sorted lists into one single resulting list.
+	 */
+	public static Node mergeLists(Node a, Node b){
+		
+		if(a == null) {
+			return b;
+		}
+		if(b == null){
+			return a;
+		}
+		
+		Node head = a.data < b.data ? a : b;
+		
+		while(a != null && b != null){
+			Node aNext = a.next;
+			Node bNext = b.next;
+			
+			if(a.data < b.data){
+				a.next = b;
+			} else{
+				b.next = a;
+			}
+			
+			a = aNext;
+			b = bNext;
+		}
+		return head;
+	}
+}
