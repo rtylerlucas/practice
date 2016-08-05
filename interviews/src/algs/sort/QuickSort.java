@@ -6,9 +6,9 @@ import java.util.Arrays;
  * Auxilary Space Complexity: O(1)
  */
 public class QuickSort {
-    
+
     private QuickSort() {}
-    
+
     public static int[] sort(int[] unsortedArray) {
         return sort(unsortedArray, 0, unsortedArray.length);
     }
@@ -17,7 +17,7 @@ public class QuickSort {
      * Divide: Array into sections less than pivot
      * and sections greater than pivot,
      */
-    
+
     /*
      * Conquer: Array by putting elements less than pivot
      * to the left of the pivot, and elements greater than
@@ -52,11 +52,11 @@ public class QuickSort {
         sort(arr, pIndex, end);
         return arr;
     }
-    
+
     private static void swap(int[] arr, int i, int j) {
         int iVal = arr[i];
         arr[i] = arr[j];
         arr[j] = iVal;
     }
-    
+
 }

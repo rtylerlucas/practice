@@ -1,2 +1,10 @@
 eclipse.preferences.version=1
 overviewRuler_migration=migrated_3.1
+showCarriageReturn=false
+showEnclosedIdeographicSpaces=false
+showEnclosedSpaces=false
+showLeadingIdeographicSpaces=false
+showLineFeed=false
+showTrailingIdeographicSpaces=false
+showWhitespaceCharacters=true
+spacesForTabs=true

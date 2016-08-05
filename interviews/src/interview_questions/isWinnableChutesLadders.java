@@ -18,22 +18,22 @@
 //        //return true;
 //    //else
 //        //iterate
-//        
-//        
+//
+//
 ////looops and array out of bounds negative
 //    //second array [0 0 1 0 1]
-//    
+//
 //    int[] visited = new int[array.size()];
-//    
-//    int i = 0;    
+//
+//    int i = 0;
 //    while( i <= (size-1) && (i > 0))
 //    {
 //        if( i == (size-1) )
 //            return true;
-//              
+//
 //        else if( visited[i]==1 && array[i]!=0)
 //            return false;
-//            
+//
 //        else if(array[i]==0)
 //        {
 //            List<Int> a1 = array.clone();
@@ -43,11 +43,11 @@
 //            a2[i] = 2;
 //            a3[i] = 3;
 //            return (isWinnable(a1) || isWinnable(a2) || isWinnable(a3) ) ;
-//        }    
+//        }
 //        else{
 //            visited[i] = 1;
 //            i += array[i];
-//        }    
-//    }       
-//    return false;   
+//        }
+//    }
+//    return false;
 //}

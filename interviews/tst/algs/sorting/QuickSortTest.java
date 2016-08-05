@@ -8,10 +8,10 @@ import org.junit.Test;
 import algs.sort.QuickSort;
 
 public class QuickSortTest {
-    
+
     public static final int[] UNSORTED_ARRAY = {1,5,6,3,2,4};
     public static final int[] EMPTY_ARRAY = {};
-    
+
     public static final int[] SORTED_ARRAY = {1,2,3,4,5,6};
 
     @Test

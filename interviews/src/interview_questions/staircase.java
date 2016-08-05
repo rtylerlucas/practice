@@ -4,13 +4,13 @@
 // * Complete the function below.
 //
 // E.g: N = 6
-// 
+//
 //     #
 //    ##
 //   ###
 //  ####
 // #####
-//######    
+//######
 //
 // */
 //
@@ -23,11 +23,11 @@
 //        int pounds = 0;
 //        StringBuilder sb;
 //        for(int i=0;i<n;i++) {
-//            
+//
 //            spaces = n-(i+1);
 //            pounds = n - spaces;
 //            sb = new StringBuilder();;
-//            
+//
 //            for(int j=0; j<spaces; j++){
 //                sb.append(space);
 //            }
@@ -35,7 +35,7 @@
 //                sb.append(pound);
 //            }
 //            sb.append(nl);
-//            
+//
 //            System.out.println(sb.toString());
 //        }
 //

@@ -1,0 +1,15 @@
+package chapter.ten;
+
+
+/*
+ * Test if a binary tree is balanced.
+ */
+public class TenDotOne {
+
+	private TenDotOne(){}
+	
+	public static boolean isBalanced(BTNode head){
+		
+		
+	}
+}

@@ -25,9 +25,9 @@
 //    /dir2 --> 5
 //    / dir3 --> 4 + prev + slash
 //    /  myText.txt --> 10 + prev + slash
-//    / 
-//p, 
-//   
+//    /
+//p,
+//
 //
 //   //Given: String representation of a file tree
 ////Objective: return the sum of the characters in absolute paths for .jpeg, .png, .gif
@@ -60,11 +60,11 @@
 //
 //   //track nest level
 //   // stack of charsCount
-//   //check spaces, compare to nestLevel 
-//   
-//  
+//   //check spaces, compare to nestLevel
+//
+//
 //}
 //
 ////drip city convo 6/11
 //
-////Markov Chain question: 
+////Markov Chain question:

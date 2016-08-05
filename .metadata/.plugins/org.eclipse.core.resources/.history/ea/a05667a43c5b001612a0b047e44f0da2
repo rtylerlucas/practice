@@ -1,0 +1,62 @@
+package chapter.six;
+
+/*
+ * Write a program that takes an array A and an index i into A,
+ * and rearranges the elements such that all elements less than A[i] (the "pivot")
+ * appear first, followed by elements equal to the pivot,
+ * followed by elements greater than the pivot
+ */
+public class SixDotOne {
+	
+	private SixDotOne(){}
+	
+	/*
+	 * First, place the pivot at the end.
+	 * 
+	 * Next, iterate across the array backwards. If number is bigger than pivot, swap
+	 * the big number close to pivot, then swap pivot with neighbor.
+	 * 
+	 */
+	public static int[] buildPartitions(int[] array, int i){
+		if(array==null)
+			return null;
+		if(array.length<2){
+			return array;
+		}
+		
+		int pivot = array[i];
+		int pIndex = array.length-1;
+		swap(array, i, pIndex);
+		
+		for(int j = array.length-2; j >= 0; j--){
+			if(array[j] > pivot){
+				if(pIndex == j+1){
+					swap(array, j, pIndex);
+				}
+				else{
+					swap(array, j, pIndex-1);
+					swap(array, pIndex-1, pIndex);
+				}
+				pIndex = pIndex-1;
+			}
+		}
+		return array;
+	}
+	
+	private static void swap(int[] array, int i, int j){
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	
+	public static void main(String[] args){
+		int[] start = new int[]{1,7,3,8,9,10,2,4,4, 5};
+		
+		int[] res = SixDotOne.buildPartitions(start, 9);
+		
+		for(int j =0; j < res.length; j++){
+			System.out.print(j + ", ");
+		}
+	}
+
+}

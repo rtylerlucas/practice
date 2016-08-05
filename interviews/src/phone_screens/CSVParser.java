@@ -2,7 +2,7 @@ package phone_screens;
 //Pal Phone Screen
 
 
-// This is the text editor interface. 
+// This is the text editor interface.
 // Anything you type or change here will be seen by the other person in real time.
 
 //ARI,"Arizona, Cardinals",University of Phoenix Stadium,"Glendale,Arizona"
@@ -16,109 +16,109 @@ import java.io.IOException;
 import java.lang.StringBuilder;
 //
 public class CSVParser {
-    
+
     private ArrayList<ArrayList<String>> set;
     private static final char COMMA = ',';
     private static final char QUOTE = '\"';
     //Read in file
-    
+
     public CSVParser(){
         set = new ArrayList<ArrayList<String>>();
     }
-    
+
     public void parse(){
-        
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String input;
-       
+
         boolean ignore = false;
         try{
-    		while((input=br.readLine())!=null){
-    		    ArrayList<String> lineSet = new ArrayList<String>();
-    		    int indexOfPrevComma = 0;
-    		    for(int i=0; i<input.length(); i++){
-    		        
-    		        char c = input.charAt(i);
-    		       // System.out.println(c);
-    		        
-    		        if(!ignore){
-    		            
-    		            if(c==QUOTE){
-    		                ignore=true;
-    		            }
-    		            
-    		            else if(c==COMMA || i == input.length()-1){
-    		          //      System.out.println("found a comma!");
-    		           //     System.out.println(indexOfPrevComma);
-    		                lineSet.add(input.substring(indexOfPrevComma,i));
-    		                indexOfPrevComma = i;
-    		            }
-    		            
-    		        }
-    		        
-    		        else if(c==QUOTE){
-    		            ignore = !ignore;
-    		            if(i == input.length()-1){
-    		                lineSet.add(input.substring(indexOfPrevComma,i+1));
-    		            }
-    		        }
-    		       
-    		    }
-    		    set.add(lineSet);
-    		 //   System.out.println(input);
-    		   // System.out.println(Arrays.toString(lineSet));
-    		    
-    		}
+            while((input=br.readLine())!=null){
+                ArrayList<String> lineSet = new ArrayList<String>();
+                int indexOfPrevComma = 0;
+                for(int i=0; i<input.length(); i++){
+
+                    char c = input.charAt(i);
+                   // System.out.println(c);
+
+                    if(!ignore){
+
+                        if(c==QUOTE){
+                            ignore=true;
+                        }
+
+                        else if(c==COMMA || i == input.length()-1){
+                      //      System.out.println("found a comma!");
+                       //     System.out.println(indexOfPrevComma);
+                            lineSet.add(input.substring(indexOfPrevComma,i));
+                            indexOfPrevComma = i;
+                        }
+
+                    }
+
+                    else if(c==QUOTE){
+                        ignore = !ignore;
+                        if(i == input.length()-1){
+                            lineSet.add(input.substring(indexOfPrevComma,i+1));
+                        }
+                    }
+
+                }
+                set.add(lineSet);
+             //   System.out.println(input);
+               // System.out.println(Arrays.toString(lineSet));
+
+            }
         } catch(IOException e){
-    		    //TODO handle error
-    	}
-		
-        
-        
+                //TODO handle error
+        }
+
+
+
     }
-    
+
     public void printSet(){
-        
+
         for(ArrayList<String> entry : set){
-            
+
             StringBuilder res = new StringBuilder();
-            
+
             for(String str : entry){
                 res.append(str);
-                
+
             }
-            
+
             System.out.println(res.toString());
         }
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public static void main(String[] args){
-        
+
         CSVParser parser = new CSVParser();
-        
+
         parser.parse();
         parser.printSet();
     }
-    
+
 //    public void print()
     //parse each line
-    
+
             //iteracte across chars,
                 // if you see quote, continue, ignore all commas until closing quote
                 // if comma, split cell
-            
+
         //add to data struct
-    
+
     //execute print function for each object
-    
-    
-    
+
+
+
 }
 //
 //NAME,FULLNAME,HOMEFIELD,LOCATION

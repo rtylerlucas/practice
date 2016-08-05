@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MergeSortedArrays {
-    
+
     private MergeSortedArrays() {}
 
     public static List<Integer> merge(List<Integer> one, List<Integer> two){

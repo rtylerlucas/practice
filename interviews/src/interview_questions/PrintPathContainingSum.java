@@ -13,37 +13,37 @@ import util.Node;
  * Note it can be negative!
  */
 public class PrintPathContainingSum {
-	
-	//psudocode
-	//starting from root, sum == 0;
-	//add root to path.
-	//if path 
 
-	public static void printPathsContainingSum(Node root, int sumGoal){
-		
-		printPaths(sumGoal,new ArrayList<Integer>(),root, 0);
-	}
-	
-	private static void printPaths(int sumGoal, List<Integer> path, Node root,int currSum){
-		
-		if(root==null){
-			return;
-		}
-		path.add(root.getValue());
-		
-		currSum+=root.getValue();
-		
-		if(sumGoal==currSum){
-			System.out.print("[");
-			for(int i : path){
-				System.out.print(i);
-				System.out.print(", ");
-			}
-			System.out.print("]");
-		}
-		printPaths(sumGoal, new ArrayList<Integer>(path), root.getLeft(), currSum);
-		printPaths(sumGoal, new ArrayList<Integer>(path), root.getRight(), currSum);
-	}
-	
-	
+    //psudocode
+    //starting from root, sum == 0;
+    //add root to path.
+    //if path
+
+    public static void printPathsContainingSum(Node root, int sumGoal){
+
+        printPaths(sumGoal,new ArrayList<Integer>(),root, 0);
+    }
+
+    private static void printPaths(int sumGoal, List<Integer> path, Node root,int currSum){
+
+        if(root==null){
+            return;
+        }
+        path.add(root.getValue());
+
+        currSum+=root.getValue();
+
+        if(sumGoal==currSum){
+            System.out.print("[");
+            for(int i : path){
+                System.out.print(i);
+                System.out.print(", ");
+            }
+            System.out.print("]");
+        }
+        printPaths(sumGoal, new ArrayList<Integer>(path), root.getLeft(), currSum);
+        printPaths(sumGoal, new ArrayList<Integer>(path), root.getRight(), currSum);
+    }
+
+
 }

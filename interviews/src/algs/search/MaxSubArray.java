@@ -22,22 +22,22 @@ public class MaxSubArray {
         }
     }
 
-	private MaxSubArray() {}
+    private MaxSubArray() {}
 
-	public static int[] find(int[] array) {
+    public static int[] find(int[] array) {
         return find(array, 0, array.length - 1);
-	}
+    }
 
-	private static int[] find(int[] array, int start, int end) {
+    private static int[] find(int[] array, int start, int end) {
 
-		//base case: empty or 1
-		if(start <= end) {
+        //base case: empty or 1
+        if(start <= end) {
             return array;
-		}
+        }
 
         int mid = (start + end) / 2;
-		return array;
+        return array;
 
 
-	}
+    }
 }

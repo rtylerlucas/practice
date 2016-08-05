@@ -18,13 +18,13 @@ import java.util.Map;
  * The base case is our smallest word, which is chainLength of 1.
  * If you combo into a previously visited word, we can look up it's chainLength,
  * add it to the current combo, and update our current ChainLength in the map.
- * 
+ *
  * We will have a tracker to maintain our longestChain, and return that once we've hit the end.
  */
 public class StringChain {
-    
+
     private StringChain() {}
-    
+
     public static int longestChain(String[] words) {
 
         Arrays.sort(words, new strLengthComparator());
@@ -67,7 +67,7 @@ public class StringChain {
             String smallKey = frontHalf+backHalf;
 
             //If we have seen this smaller word before, then we have found a potential chain
-            //We should update our greatestChain map if our currentChain plus what was found is biggest.    
+            //We should update our greatestChain map if our currentChain plus what was found is biggest.
             if(wordChainMap.containsKey(smallKey)){
                 if((chainLength + wordChainMap.get(smallKey)) > wordChainMap.get(word)){
                     wordChainMap.put(word, chainLength + wordChainMap.get(smallKey));

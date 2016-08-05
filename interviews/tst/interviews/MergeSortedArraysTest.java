@@ -11,7 +11,7 @@ public class MergeSortedArraysTest {
 
     public static ArrayList<Integer> unsortedOne = new ArrayList<>();
     public static ArrayList<Integer> unsortedTwo = new ArrayList<>();
-    
+
     @Before
     public void setUp() {
         unsortedOne.add(1);
@@ -21,7 +21,7 @@ public class MergeSortedArraysTest {
         unsortedOne.add(8);
         unsortedOne.add(10);
         unsortedOne.add(12);
-        
+
         unsortedTwo.add(0);
         unsortedTwo.add(4);
         unsortedTwo.add(5);
@@ -29,9 +29,9 @@ public class MergeSortedArraysTest {
         unsortedTwo.add(9);
         unsortedTwo.add(11);
 
-        
+
     }
-    
+
     @Test
     public void testMerge() {
         System.out.println(MergeSortedArrays.merge(unsortedOne, unsortedTwo));
