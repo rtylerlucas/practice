@@ -1,7 +1,0 @@
-INDEX VERSION 1.127+/Users/rtylerlucas/Documents/workplace/practice/.metadata/.plugins/org.eclipse.jdt.core
-524126782.index
-2803663881.index
-677361136.index
-452954943.index
-2692065203.index
-2336795566.index
