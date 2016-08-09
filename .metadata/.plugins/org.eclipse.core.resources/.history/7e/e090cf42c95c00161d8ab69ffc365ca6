@@ -1,0 +1,29 @@
+package chapter.twelve;
+
+public class TweleveDotOne {
+    /*
+     * Given a sorted array, find first occurance of k
+     * Find a k, then bounce left
+     */
+    public int findFirstOccurance(int k, int[] arr){
+
+    }
+    //recursive bSearch Impl
+    public int bSearch(int k, int[] arr, int s, int e){
+
+        int middleIndex = e + (s - e) / 2;
+        if(arr[middleIndex] == k){
+            return middleIndex;
+        }
+        if( arr[middleIndex] > k ){
+            return bSearch(k, arr, s, middleIndex);
+        }
+        else{
+           return bSearch(k, arr, middleIndex + 1, e);
+        }
+    }
+    //iterative bSearch Impl
+
+//    ~~~~~~~~~~~~NOT COMPLETE : ] ~~~~~~~~~~~~~~~~~
+
+}

@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="chapter.seven.SevenDotOne"/>
 <fullyQualifiedTypeName name="chapter.eight.EightDotTwo"/>
 <fullyQualifiedTypeName name="chapter.eight.Node"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

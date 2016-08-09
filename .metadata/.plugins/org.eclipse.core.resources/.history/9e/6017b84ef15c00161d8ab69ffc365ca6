@@ -1,0 +1,32 @@
+package chapter.fourteen;
+
+import java.util.ArrayList;
+import java.util.List;
+/*
+ * Given two sorted arrays, find the intersections, do not include duplicates.
+ */
+public class FourteenDotOne {
+
+    /*
+     * Iterate across both arrays, moving the smaller one forward, adding to set if they are the
+     * same value.
+     */
+    public static List<Integer> getIntersection(List<Integer> a1, List<Integer> a2){
+        int i = 0;
+        int j = 0;
+        List<Integer> result = new ArrayList<Integer>();
+        while(i < a1.size() && j < a2.size()){
+            if(a1.get(i)==a2.get(j)){
+                if(!result.contains(a1.get(i))){
+                    result.add(a1.get(i));
+                }
+                i++;
+                j++;
+            } else if(a1.get(i) < a2.get(j)){
+                i++;
+            } else {
+                j++;
+            }
+        }
+    }
+}
